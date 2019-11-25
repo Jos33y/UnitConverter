@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Unit Converter</string>
+    <string name="kg_hint">Enter a value </string>
+    <string name="kg_button_hint"> Convert to feet </string>
+    <string name="value_hint">Enter a value </string>
+    <string name="km_value_hint"> Enter a value in kilometres </string>
+    <string name="convert_button"> Convert to feet </string>
+    <string name="feet_hint">Enter a value in metres</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+</resources>
