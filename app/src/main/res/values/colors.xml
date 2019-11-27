@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimary">#FFE0B2</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#DA260E04</color>
 
 
-    <color name="primaryColor">#137dff</color>
-    <color name="secondaryColor">#ff1f13</color>
-    <color name="primaryLightColor">#6dabff</color>
-    <color name="primaryDarkColor">#0052cb</color>
+
+    <color name="primaryColor">#DA260E04</color>
+    <color name="primaryLightColor">#73e8ff</color>
+    <color name="primaryDarkColor">#DA260E04</color>
+    <color name="secondaryColor">#ec407a</color>
+    <color name="secondaryLightColor">#ff77a9</color>
+    <color name="secondaryDarkColor">#b4004e</color>
     <color name="primaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#000000</color>
+
+
+    <color name="valuesColor">#FFFFFF</color>
+    <color name="listViewColor">#DA260E04</color>
+    <color name="tabColor">#DA260E04</color>
+    <color name="tabTextColor">#FFFFFF</color>
+
 </resources>

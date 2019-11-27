@@ -55,25 +55,20 @@ public class WeightFragment extends Fragment {
         spinner.setAdapter(adapter);
         editText.requestFocus();
 
+        arrayList.add(new ListViewDataModel(weightValue, "g"));
+        arrayList.add(new ListViewDataModel(weightValue, "kg"));
+        arrayList.add(new ListViewDataModel(weightValue, "lb(pounds)"));
+        arrayList.add(new ListViewDataModel(weightValue, "ounce"));
+        arrayList.add(new ListViewDataModel(weightValue, "tonne"));
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String value = adapterView.getItemAtPosition(i).toString();
 
-
-                if (value.equals("Select a unit")) {
-                    arrayList.add(new ListViewDataModel(weightValue, "g"));
-                    arrayList.add(new ListViewDataModel(weightValue, "kg"));
-                    arrayList.add(new ListViewDataModel(weightValue, "lb(pounds)"));
-                    arrayList.add(new ListViewDataModel(weightValue, "ounce"));
-                    arrayList.add(new ListViewDataModel(weightValue, "tonne"));
-
-                }
-
                 if (value.equals("lb(pounds)")) {
                     arrayList.clear();
                     spinner.setSelection(0);
-                    Log.d("message", "pounds selected");
                     editTextValue = editText.getText().toString();
                     weightValue = Double.valueOf(editTextValue);
 
@@ -105,7 +100,7 @@ public class WeightFragment extends Fragment {
                 if (value.equals("g"))  {
                     arrayList.clear();
                     spinner.setSelection(0);
-                    Log.d("message", "pounds selected");
+                    customAdapter.notifyDataSetChanged();
                     editTextValue = editText.getText().toString();
                     weightValue = Double.valueOf(editTextValue);
 
@@ -129,9 +124,7 @@ public class WeightFragment extends Fragment {
                         customAdapter.notifyDataSetChanged();
                         arrayList.add(new ListViewDataModel(result, "Tonne"));
 
-
                     }
-
 
                 }
 
@@ -139,7 +132,7 @@ public class WeightFragment extends Fragment {
 
                     arrayList.clear();
                     spinner.setSelection(0);
-                    Log.d("message", "kg selected");
+                    customAdapter.notifyDataSetChanged();
                     editTextValue = editText.getText().toString();
                     weightValue = Double.valueOf(editTextValue);
 
@@ -170,10 +163,9 @@ public class WeightFragment extends Fragment {
                 if (value.equals("ounce"))  {
                     arrayList.clear();
                     spinner.setSelection(0);
-                    Log.d("message", "ounce selected");
+                    customAdapter.notifyDataSetChanged();
                     editTextValue = editText.getText().toString();
                     weightValue = Double.valueOf(editTextValue);
-
 
                     arrayList.add(new ListViewDataModel(weightValue, "ounce"));
                     {
@@ -200,7 +192,7 @@ public class WeightFragment extends Fragment {
                 if (value.equals("tonne"))  {
                     arrayList.clear();
                     spinner.setSelection(0);
-                    Log.d("message", "ounce selected");
+                    customAdapter.notifyDataSetChanged();
                     editTextValue = editText.getText().toString();
                     weightValue = Double.valueOf(editTextValue);
 
@@ -222,8 +214,6 @@ public class WeightFragment extends Fragment {
                         UnitFunctions.tonnesToOunce();
                         customAdapter.notifyDataSetChanged();
                         arrayList.add(new ListViewDataModel(result, "ounce"));
-
-
 
                     }
 

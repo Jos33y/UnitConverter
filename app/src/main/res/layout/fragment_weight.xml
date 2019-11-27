@@ -12,6 +12,7 @@
         android:layout_width="224dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
+        android:text="0"
         android:layout_marginTop="84dp"
         android:ems="10"
         android:inputType="numberDecimal"
@@ -31,18 +32,20 @@
 
     <ListView
         android:id="@+id/all_fragment_listview"
-        android:layout_width="301dp"
-        android:layout_height="407dp"
+        android:layout_width="313dp"
+        android:layout_height="440dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:theme="@style/ListViewTheme"
+        android:background="@color/listViewColor"
         android:focusableInTouchMode="false"
         android:isScrollContainer="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_temp"
-        app:layout_constraintVertical_bias="0.392" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

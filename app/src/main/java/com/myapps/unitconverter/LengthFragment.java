@@ -21,16 +21,11 @@ import java.util.ArrayList;
 import static com.myapps.unitconverter.UnitFunctions.result;
 
 public class LengthFragment extends Fragment {
-
-
     private String editTextValue;
-
     private EditText editText;
     private ListView listView;
-    private CustomAdapter customAdapter;
-
     public static double lengthValue;
-
+    private CustomAdapter customAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,25 +52,24 @@ public class LengthFragment extends Fragment {
 
         editText.requestFocus();
 
+        arrayList.add(new ListViewDataModel(lengthValue, "m"));
+        arrayList.add(new ListViewDataModel(lengthValue, "cm"));
+        arrayList.add(new ListViewDataModel(lengthValue, "inch"));
+        arrayList.add(new ListViewDataModel(lengthValue, "ft"));
+        arrayList.add(new ListViewDataModel(lengthValue, "mile"));
+        arrayList.add(new ListViewDataModel(lengthValue, "km"));
+        arrayList.add(new ListViewDataModel(lengthValue, "yard"));
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String value = adapterView.getItemAtPosition(i).toString();
 
-                if (value.equals("Select a unit")) {
-                    arrayList.add(new ListViewDataModel(lengthValue, "m"));
-                    arrayList.add(new ListViewDataModel(lengthValue, "cm"));
-                    arrayList.add(new ListViewDataModel(lengthValue, "inch"));
-                    arrayList.add(new ListViewDataModel(lengthValue, "ft"));
-                    arrayList.add(new ListViewDataModel(lengthValue, "mile"));
-                    arrayList.add(new ListViewDataModel(lengthValue, "km"));
-                    arrayList.add(new ListViewDataModel(lengthValue, "yard"));
-
-                }
 
                 if (value.equals("m")) {
                     arrayList.clear();
                     spinner.setSelection(0);
+                    customAdapter.notifyDataSetChanged();
                     editTextValue = editText.getText().toString();
                     lengthValue = Double.valueOf(editTextValue);
 
@@ -110,6 +104,7 @@ public class LengthFragment extends Fragment {
                 if (value.equals("cm")) {
                     arrayList.clear();
                     spinner.setSelection(0);
+                    customAdapter.notifyDataSetChanged();
                     editTextValue = editText.getText().toString();
                     lengthValue = Double.valueOf(editTextValue);
 
@@ -145,6 +140,7 @@ public class LengthFragment extends Fragment {
                 if (value.equals("inch")) {
                     arrayList.clear();
                     spinner.setSelection(0);
+                    customAdapter.notifyDataSetChanged();
                     editTextValue = editText.getText().toString();
                     lengthValue = Double.valueOf(editTextValue);
 
@@ -179,6 +175,7 @@ public class LengthFragment extends Fragment {
                 if (value.equals("ft")) {
                     arrayList.clear();
                     spinner.setSelection(0);
+                    customAdapter.notifyDataSetChanged();
                     editTextValue = editText.getText().toString();
                     lengthValue = Double.valueOf(editTextValue);
 
@@ -212,6 +209,7 @@ public class LengthFragment extends Fragment {
                 if (value.equals("mile")) {
                     arrayList.clear();
                     spinner.setSelection(0);
+                    customAdapter.notifyDataSetChanged();
                     editTextValue = editText.getText().toString();
                     lengthValue = Double.valueOf(editTextValue);
 
@@ -246,6 +244,7 @@ public class LengthFragment extends Fragment {
                 if (value.equals("km")) {
                     arrayList.clear();
                     spinner.setSelection(0);
+                    customAdapter.notifyDataSetChanged();
                     editTextValue = editText.getText().toString();
                     lengthValue = Double.valueOf(editTextValue);
 
@@ -281,6 +280,7 @@ public class LengthFragment extends Fragment {
                 if (value.equals("yard")) {
                     arrayList.clear();
                     spinner.setSelection(0);
+                    customAdapter.notifyDataSetChanged();
                     editTextValue = editText.getText().toString();
                     lengthValue = Double.valueOf(editTextValue);
 

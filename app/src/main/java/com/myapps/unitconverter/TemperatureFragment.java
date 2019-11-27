@@ -53,20 +53,18 @@ public class TemperatureFragment extends Fragment {
 
         editText.requestFocus();
 
+        arrayList.add(new ListViewDataModel(tempValue, "°C"));
+        arrayList.add(new ListViewDataModel(tempValue, "°F"));
+        arrayList.add(new ListViewDataModel(tempValue, "K"));
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String value = adapterView.getItemAtPosition(i).toString();
 
-              if (value.equals("Select a unit")) {
-                  arrayList.add(new ListViewDataModel(tempValue, "°C"));
-                  arrayList.add(new ListViewDataModel(tempValue, "°F"));
-                  arrayList.add(new ListViewDataModel(tempValue, "K"));
-
-              }
-
               if (value.equals("°C")) {
                   arrayList.clear();
+                  customAdapter.notifyDataSetChanged();
                   editTextValue = editText.getText().toString();
                   tempValue = Double.valueOf(editTextValue);
 
@@ -85,6 +83,7 @@ public class TemperatureFragment extends Fragment {
               }
               if (value.equals("°F")) {
                   arrayList.clear();
+                  customAdapter.notifyDataSetChanged();
                   editTextValue = editText.getText().toString();
                   tempValue = Double.valueOf(editTextValue);
 
@@ -102,6 +101,7 @@ public class TemperatureFragment extends Fragment {
               }
               if (value.equals("K"))  {
                   arrayList.clear();
+                  customAdapter.notifyDataSetChanged();
                   editTextValue = editText.getText().toString();
                   tempValue = Double.valueOf(editTextValue);
 
